@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedai Kopi Harmoni</title>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf7f2;
+    }
+
+    /* HEADER */
+    header {
+      background-color: #4a2c2a;
+      text-align: center;
+      padding: 15px 0;
+      color: white;
+    }
+
+    /* NAVBAR */
+    nav {
+      background-color: #6e3f3b;
+      text-align: center;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgb(239, 239, 239);
+      margin-inline: 40px;
+      font-weight: bold;
+      font-size: 17px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px white;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      height: 420px;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      padding: 50px;
+    }
+
+    /* CONTAINER */
+    .container {
+      width: 80%;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    /* ================================== */
+    /* MENU SECTION — NEW DESIGN PREMIUM */
+    /* ================================== */
+    .menu-section {
+      padding: 40px 0;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+
+    .menu-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      transition: 0.3s ease;
+      border: 1px solid #e8d8c6;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .menu-img {
+      width: 100%;
+      height: 210px;
+      background-size: cover;
+      background-position: center;
+      transition: 0.4s ease;
+    }
+
+    .menu-card:hover .menu-img {
+      transform: scale(1.07);
+    }
+
+    .menu-content {
+      padding: 18px 20px 25px;
+      text-align: center;
+    }
+
+    .menu-content h3 {
+      color: #4a2c2a;
+      margin: 12px 0 8px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu-content p {
+      color: #6e3f3b;
+      font-size: 15px;
+      margin: 6px 0;
+    }
+
+    .menu-price {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #4a2c2a;
+      font-weight: bold;
+    }
+
+    /* TENTANG */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service {
+  background: #fff;
+  padding: 25px 28px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.09);
+  border: 1px solid #e6d5c3;
+  transition: 0.25s ease;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+}
+
+.service h3 {
+  color: #4a2c2a;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.sejarah,
+.service p {
+  color: #6e3f3b;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+
+    .sejarah {
+      text-align: justify;
+      line-height: 1.6;
+      color: #4a2c2a;
+    }
+
+    /* FORM */
+    form {
+      background: #fffdf7;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e6d5c3;
+    }
+
+    form label {
+      font-weight: bold;
+      color: #4a2c2a;
+      margin-bottom: 5px;
+      display: block;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 18px;
+      border: 1px solid #c9b7a6;
+      border-radius: 10px;
+      background: #faf5ef;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #6e3f3b;
+      background: #fff;
+      outline: none;
+      box-shadow: 0 0 6px rgba(110, 63, 59, 0.4);
+    }
+
+    button {
+      width: 100%;
+      background: #6e3f3b;
+      padding: 12px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.25s ease;
+      letter-spacing: 1px;
+    }
+
+    button:hover {
+      background: #4a2c2a;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 10px 0;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Selamat Datang di Kedai Kopi Harmoni</h1>
+    <p>Tempat Nongkrong Nyaman dengan Kopi Terbaik</p>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#layanan">Menu</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <h1>Ngopi Santai, Rasakan Harmoni</h1>
+  </section>
+
+  <!-- MENU -->
+  <section class="container menu-section" id="layanan">
+    <h2 style="text-align: center; margin-bottom: 30px;">Menu Kami</h2>
+
+    <div class="menu-grid">
+
+      <div class="menu-card" data-aos="fade-up">
+        <div class="menu-img" style="background-image: url('kopi-espresso.jpg');"></div>
+        <div class="menu-content">
+          <h3>Espresso</h3>
+          <p>Kopi hitam pekat dengan rasa kuat dan aromatik.</p>
+          <div class="menu-price">Rp 20.000</div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="menu-img" style="background-image: url('kopi-cappucino.jpg');"></div>
+        <div class="menu-content">
+          <h3>Cappuccino</h3>
+          <p>Perpaduan espresso, susu, dan foam lembut.</p>
+          <div class="menu-price">Rp 25.000</div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="menu-img" style="background-image: url('caramel-latte.jpg');"></div>
+        <div class="menu-content">
+          <h3>Caramel Latte</h3>
+          <p>Latte creamy dengan manis karamel yang khas.</p>
+          <div class="menu-price">Rp 28.000</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section class="container" id="tentang">
+    <h2 style="text-align: center;">Tentang Kami</h2>
+
+    <div class="services">
+      <div class="service" data-aos="fade-right">
+        <h3>Sejarah Kedai Kopi Kami</h3>
+        <p class="sejarah">
+          Kedai Kopi Harmoni bermula dari hobi sederhana dalam meracik kopi di rumah. Dari cangkir pertama yang
+          diberikan kepada teman,
+          tumbuhlah keinginan untuk menghadirkan tempat nyaman bagi siapa saja yang ingin menikmati kopi berkualitas.
+          Dengan dukungan banyak orang,
+          kedai ini hadir sebagai ruang hangat penuh rasa dan cerita.
+        </p>
+      </div>
+
+      <div class="service" data-aos="fade-left">
+        <h3>Visi</h3>
+        <p>Menjadi kedai kopi favorit untuk semua kalangan.</p>
+      </div>
+
+      <div class="service" data-aos="fade-left">
+        <h3>Misi</h3>
+        <p>Menyajikan kopi terbaik dengan suasana yang nyaman dan hangat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="container" id="kontak">
+    <h2 style="text-align: center;">Hubungi Kami</h2>
+
+    <form>
+      <label>Nama</label>
+      <input type="text" placeholder="Masukkan nama Anda">
+
+      <label>Email</label>
+      <input type="email" placeholder="Masukkan email Anda">
+
+      <label>Pesan</label>
+      <textarea rows="5" placeholder="Masukkan pesan Anda"></textarea>
+
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2024 Kedai Kopi Harmoni</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+
+</html>
